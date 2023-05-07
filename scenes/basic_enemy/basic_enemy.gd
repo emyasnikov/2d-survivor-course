@@ -23,3 +23,7 @@ func get_direction_to_player():
         return (player_node.global_position - global_position).normalized()
 
     return Vector2.ZERO
+
+
+func _on_area_2d_area_entered(area):
+    queue_free()
