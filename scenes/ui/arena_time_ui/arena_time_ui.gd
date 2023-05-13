@@ -18,4 +18,4 @@ func format_seconds_to_string(seconds: float):
     var minutes = floor(seconds / 60)
     var remaining_seconds = floor(seconds - (minutes * 60))
 
-    return str(minutes) + ":" + str(remaining_seconds)
+    return str(minutes) + ":" + ("%02.d" % seconds)
