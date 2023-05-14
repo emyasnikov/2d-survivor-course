@@ -6,10 +6,6 @@ const MAX_RANGE = 150
 
 var damage = 5
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-    pass # Replace with function body.
-
 
 func _on_timer_timeout():
     var player = get_tree().get_first_node_in_group("player") as Node2D
