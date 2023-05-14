@@ -7,7 +7,11 @@ const MAX_RANGE = 150
 var damage = 5
 
 
-func _on_timer_timeout():
+func _ready():
+    $Timer.timeout.connect(on_timer_timeout)
+
+
+func on_timer_timeout():
     var player = get_tree().get_first_node_in_group("player") as Node2D
 
     if player == null:
