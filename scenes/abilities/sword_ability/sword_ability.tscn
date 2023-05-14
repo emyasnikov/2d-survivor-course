@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsq1e5tyj03ky"]
+[gd_scene load_steps=8 format=3 uid="uid://dsq1e5tyj03ky"]
 
+[ext_resource type="Script" path="res://scenes/abilities/sword_ability/sword_ability.gd" id="1_5h1gy"]
 [ext_resource type="Texture2D" uid="uid://dmo1ajkwbk2nj" path="res://scenes/abilities/sword_ability/sword.png" id="1_vf4fb"]
 [ext_resource type="PackedScene" uid="uid://c61ul0yrc0vnq" path="res://scenes/components/hitbox_component/hitbox_component.tscn" id="2_k0tsw"]
 
@@ -107,6 +108,7 @@ _data = {
 size = Vector2(30, 30)
 
 [node name="SwordAbility" type="Node2D"]
+script = ExtResource("1_5h1gy")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "swing"
