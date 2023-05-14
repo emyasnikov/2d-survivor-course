@@ -1,5 +1,6 @@
 extends Node
 
+@export_range(0, 1) var drop_percent: float = 0.5
 @export var health_component: HealthComponent
 @export var vial_scene: PackedScene
 
@@ -19,6 +20,9 @@ func on_died():
         return
 
     if not owner is Node2D:
+        return
+
+    if randf() > drop_percent:
         return
 
     var spawn_position = (owner as Node2D).global_position
