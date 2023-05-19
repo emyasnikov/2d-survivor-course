@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://scenes/ui/upgrade_screen/upgrade_screen.gd" id="1_r8v2p"]
 
 [node name="UpgradeScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_r8v2p")
 upgrade_card_scene = ExtResource("1_i3djr")
 
