@@ -9,5 +9,5 @@ func set_ability_upgrades(upgrades: Array[AbilityUpgrade]):
     for upgrade in upgrades:
         var card_instance = upgrade_card_scene.instantiate() as AbilityUpgradeCard
 
-        card_container.add_child(card_container)
+        card_container.add_child(card_instance)
         card_instance.set_ability_upgrade(upgrade)
