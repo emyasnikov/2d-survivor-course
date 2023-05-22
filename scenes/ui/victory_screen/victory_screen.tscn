@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://5uhuhixw45bs"]
+[gd_scene load_steps=2 format=3 uid="uid://5uhuhixw45bs"]
+
+[ext_resource type="Script" path="res://scenes/ui/victory_screen/victory_screen.gd" id="1_4tjry"]
 
 [node name="VictoryScreen" type="CanvasLayer"]
+script = ExtResource("1_4tjry")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
