@@ -1,9 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://7a461u84owoo"]
+[gd_scene load_steps=10 format=3 uid="uid://7a461u84owoo"]
 
 [ext_resource type="Texture2D" uid="uid://b6moifctiq2m3" path="res://scenes/player/player.png" id="1_63bgq"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_rjvem"]
 [ext_resource type="PackedScene" uid="uid://dcrk6uokgen58" path="res://scenes/abilities/sword_ability/sword_ability_controller.tscn" id="2_gsl27"]
 [ext_resource type="Script" path="res://scenes/components/health_component/health_component.gd" id="3_keoxv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ebwuf"]
+bg_color = Color(0.247059, 0.14902, 0.192157, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm2j6"]
+bg_color = Color(0.262745, 0.882353, 0.701961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.247059, 0.14902, 0.192157, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ahq5o"]
 radius = 8.0
@@ -44,6 +55,8 @@ offset_right = 16.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_ebwuf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_nm2j6")
 max_value = 1.0
 value = 0.5
 show_percentage = false
