@@ -2,11 +2,17 @@ extends Node
 
 const SPAWN_RADIUS = 340
 
+@export var arena_time_manager: ArenaTimeManager
 @export var basic_enemy_scene: PackedScene
 
 
 func _ready():
+    arena_time_manager.arena_difficulty_increased.connect(on_arena_difficulty_increased)
     $Timer.timeout.connect(on_timer_timeout)
+
+
+func on_arena_difficulty_increased(arena_difficulty: int):
+    pass
 
 
 func on_timer_timeout():
