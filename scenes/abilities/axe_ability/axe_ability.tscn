@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://choarbllv2lbg"]
+
+[ext_resource type="Texture2D" uid="uid://bh3w4gpfob8nl" path="res://scenes/abilities/axe_ability/axe.png" id="1_5bbsn"]
+[ext_resource type="Script" path="res://scenes/abilities/axe_ability/axe_ability.gd" id="1_u621n"]
+
+[node name="AxeAbility" type="Node"]
+script = ExtResource("1_u621n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5bbsn")
