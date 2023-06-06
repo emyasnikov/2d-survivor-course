@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 const ACCELERATION_SMOOTHING = 25
 const MAX_SPEED = 150

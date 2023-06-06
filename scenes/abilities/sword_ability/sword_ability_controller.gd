@@ -25,7 +25,7 @@ func on_ability_upgrade_added(upgrade: AbilityUpgrade, upgrades: Dictionary):
 
 
 func on_timer_timeout():
-    var player = get_tree().get_first_node_in_group("player") as Node2D
+    var player = get_tree().get_first_node_in_group("player") as Player
 
     if player == null:
         return

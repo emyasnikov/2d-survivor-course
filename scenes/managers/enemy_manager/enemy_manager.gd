@@ -48,7 +48,7 @@ func on_arena_difficulty_increased(arena_difficulty: int):
 func on_timer_timeout():
     timer.start()
 
-    var player = get_tree().get_first_node_in_group("player") as Node2D
+    var player = get_tree().get_first_node_in_group("player") as Player
 
     if player == null:
         return
