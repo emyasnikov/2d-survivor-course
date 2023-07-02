@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://7a461u84owoo"]
+[gd_scene load_steps=11 format=3 uid="uid://7a461u84owoo"]
 
 [ext_resource type="Texture2D" uid="uid://b6moifctiq2m3" path="res://scenes/player/player.png" id="1_63bgq"]
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_rjvem"]
+[ext_resource type="PackedScene" uid="uid://dr1xaoeiy3cbc" path="res://scenes/abilities/axe_ability/axe_ability_controller.tscn" id="2_2vfgv"]
 [ext_resource type="PackedScene" uid="uid://dcrk6uokgen58" path="res://scenes/abilities/sword_ability/sword_ability_controller.tscn" id="2_gsl27"]
 [ext_resource type="Script" path="res://scenes/components/health_component/health_component.gd" id="3_keoxv"]
 
@@ -32,6 +33,8 @@ motion_mode = 1
 script = ExtResource("1_rjvem")
 
 [node name="AbilityManager" type="Node" parent="."]
+
+[node name="AxeAbilityController" parent="AbilityManager" instance=ExtResource("2_2vfgv")]
 
 [node name="SwordAbilityController" parent="AbilityManager" instance=ExtResource("2_gsl27")]
 
