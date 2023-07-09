@@ -5,6 +5,8 @@ const MAX_RADIUS = 100
 
 @onready var hitbox_component = $HitboxComponent
 
+var base_rotation = Vector2.RIGHT
+
 
 func _ready():
     var tween = create_tween()
@@ -12,9 +14,11 @@ func _ready():
     tween.tween_method(tween_method, 0.0, 2.0, 3.0)
     tween.tween_callback(queue_free)
 
+    base_rotation = Vector2.RIGHT.rotated(randf_range(0, TAU))
+
 
 func tween_method(rotations: float):
-    var current_direction = Vector2.RIGHT.rotated(rotations * TAU)
+    var current_direction = base_rotation.rotated(rotations * TAU)
     var percent = rotations / 2
 
     var current_radius = percent * MAX_RADIUS
