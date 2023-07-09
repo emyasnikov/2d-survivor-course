@@ -3,6 +3,8 @@ class_name AxeAbility
 
 const MAX_RADIUS = 100
 
+@onready var hitbox_component = $HitboxComponent
+
 
 func _ready():
     var tween = create_tween()

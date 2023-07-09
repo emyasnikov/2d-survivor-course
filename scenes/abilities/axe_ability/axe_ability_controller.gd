@@ -1,5 +1,7 @@
 extends Node
 
+const damage = 10
+
 @export var axe_ability_scene: PackedScene
 
 
@@ -22,3 +24,4 @@ func on_timer_timeout():
 
     foreground.add_child(axe_ability_instance)
     axe_ability_instance.global_position = player.global_position
+    axe_ability_instance.hitbox_component.damage = damage
