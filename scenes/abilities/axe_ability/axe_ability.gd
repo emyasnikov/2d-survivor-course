@@ -7,7 +7,7 @@ const MAX_RADIUS = 100
 func _ready():
     var tween = create_tween()
 
-    tween.tween_method(tween_method, 0, 2, 2)
+    tween.tween_method(tween_method, 0.0, 2.0, 2.0)
 
 
 func tween_method(rotations: float):
