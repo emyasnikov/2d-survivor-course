@@ -26,11 +26,6 @@ func apply_upgrade(upgrade: AbilityUpgrade):
 
 
 func on_level_up(new_level: int):
-    var chosen_upgrade = upgrade_pool.pick_random() as AbilityUpgrade
-
-    if chosen_upgrade == null:
-        return
-
     var upgrade_screen_instance = upgrade_screen_scene.instantiate() as UpgradeScreen
 
     add_child(upgrade_screen_instance)
@@ -40,3 +35,17 @@ func on_level_up(new_level: int):
 
 func on_upgrade_selected(upgrade: AbilityUpgrade):
     apply_upgrade(upgrade)
+
+
+func pick_upgrades():
+    var filtered_upgrades = upgrade_pool.duplicate() as Array[AbilityUpgrade]
+
+    for i in 2:
+        var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
+
+        if chosen_upgrade == null:
+            return
+
+        filtered_upgrades = filtered_upgrades.filter(func (upgrade: AbilityUpgrade):
+            upgrade.id != chosen_upgrade.id
+        )
