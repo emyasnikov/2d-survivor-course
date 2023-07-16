@@ -50,7 +50,7 @@ func pick_upgrades():
         chosen_upgrades.append(chosen_upgrade)
 
         filtered_upgrades = filtered_upgrades.filter(func (upgrade: AbilityUpgrade):
-            upgrade.id != chosen_upgrade.id
+            return upgrade.id != chosen_upgrade.id
         )
 
     return chosen_upgrades
