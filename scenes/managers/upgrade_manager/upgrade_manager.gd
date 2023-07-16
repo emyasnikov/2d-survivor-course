@@ -11,18 +11,18 @@ func _ready():
     experience_manager.level_up.connect(on_level_up)
 
 
-func apply_upgrade(upgrade: AbilityUpgrade):
-    var has_upgrade = current_upgrades.has(upgrade.id)
+func apply_upgrade(ability_upgrade: AbilityUpgrade):
+    var has_upgrade = current_upgrades.has(ability_upgrade.id)
 
     if not has_upgrade:
-        current_upgrades[upgrade.id] = {
+        current_upgrades[ability_upgrade.id] = {
             "quantity": 1,
-            "resource": upgrade
+            "resource": ability_upgrade
         }
     else:
-        current_upgrades[upgrade.id]["quantity"] += 1
+        current_upgrades[ability_upgrade.id]["quantity"] += 1
 
-    GameEvents.emit_ability_upgrade_added(upgrade, current_upgrades)
+    GameEvents.emit_ability_upgrade_added(ability_upgrade, current_upgrades)
 
 
 func on_level_up(new_level: int):

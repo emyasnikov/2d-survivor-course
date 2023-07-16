@@ -14,8 +14,8 @@ func _ready():
     GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 
 
-func on_ability_upgrade_added(upgrade: AbilityUpgrade, upgrades: Dictionary):
-    if upgrade.id != "sword_rate":
+func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, upgrades: Dictionary):
+    if ability_upgrade.id != "sword_rate":
         return
 
     var percent_reduction = upgrades["sword_rate"]["quantity"] * 0.1

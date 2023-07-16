@@ -46,11 +46,11 @@ func get_movement_vector():
     return Vector2(x_movement, y_movement)
 
 
-func on_ability_upgrade_added(upgrade: AbilityUpgrade, upgrades: Dictionary):
-    if not upgrade is Ability:
+func on_ability_upgrade_added(ability_upgrade: AbilityUpgrade, upgrades: Dictionary):
+    if not ability_upgrade is Ability:
         return
 
-    var ability = upgrade as Ability
+    var ability = ability_upgrade as Ability
 
     abilities.add_child(ability.ability_controller_scene.instantiate())
 
