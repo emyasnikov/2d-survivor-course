@@ -1,5 +1,7 @@
 extends Node
 
+const MAX_UPGRADE_OPTIONS = 2
+
 @export var upgrade_pool: Array[AbilityUpgrade]
 @export var experience_manager: ExperienceManager
 @export var upgrade_screen_scene: PackedScene
@@ -52,7 +54,7 @@ func pick_upgrades():
     var chosen_upgrades: Array[AbilityUpgrade] = []
     var filtered_upgrades = upgrade_pool.duplicate() as Array[AbilityUpgrade]
 
-    for i in 2:
+    for i in MAX_UPGRADE_OPTIONS:
         var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
 
         chosen_upgrades.append(chosen_upgrade)
