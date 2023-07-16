@@ -57,6 +57,9 @@ func pick_upgrades():
     for i in MAX_UPGRADE_OPTIONS:
         var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
 
+        if chosen_upgrade == null:
+            break
+
         chosen_upgrades.append(chosen_upgrade)
 
         filtered_upgrades = filtered_upgrades.filter(func (upgrade: AbilityUpgrade):
