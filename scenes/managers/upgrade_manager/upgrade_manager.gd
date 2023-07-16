@@ -41,7 +41,7 @@ func on_upgrade_selected(upgrade: AbilityUpgrade):
 
 
 func pick_upgrades():
-    var chosen_upgrades = []
+    var chosen_upgrades: Array[AbilityUpgrade] = []
     var filtered_upgrades = upgrade_pool.duplicate() as Array[AbilityUpgrade]
 
     for i in 2:
