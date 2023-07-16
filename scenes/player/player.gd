@@ -4,6 +4,7 @@ class_name Player
 const ACCELERATION_SMOOTHING = 25
 const MAX_SPEED = 150
 
+@onready var abilities = $Abilities
 @onready var damage_interval_timer = $DamageIntervalTimer
 @onready var health_bar = $HealthBar
 @onready var health_component = $HealthComponent as HealthComponent
@@ -16,6 +17,7 @@ func _ready():
     $CollisionArea.body_exited.connect(on_body_exited)
     damage_interval_timer.timeout.connect(on_damage_interval_timer_timeout)
     health_component.health_changed.connect(on_health_changed)
+    GameEvents.ability_upgrade_added.connect(on_ability_upgrade_added)
 
     update_health_display()
 
@@ -42,6 +44,15 @@ func get_movement_vector():
     var y_movement = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 
     return Vector2(x_movement, y_movement)
+
+
+func on_ability_upgrade_added(upgrade: AbilityUpgrade, upgrades: Dictionary):
+    if not upgrade is Ability:
+        return
+
+    var ability = upgrade as Ability
+
+    abilities.add_child(ability.ability_controller_scene.instantiate())
 
 
 func on_body_entered(body: Node2D):
