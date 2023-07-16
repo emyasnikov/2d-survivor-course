@@ -55,10 +55,10 @@ func pick_upgrades():
     var filtered_upgrades = upgrade_pool.duplicate() as Array[AbilityUpgrade]
 
     for i in MAX_UPGRADE_OPTIONS:
-        var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
-
-        if chosen_upgrade == null:
+        if filtered_upgrades.size() == 0:
             break
+
+        var chosen_upgrade = filtered_upgrades.pick_random() as AbilityUpgrade
 
         chosen_upgrades.append(chosen_upgrade)
 
