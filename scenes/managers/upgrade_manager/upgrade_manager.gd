@@ -22,6 +22,14 @@ func apply_upgrade(ability_upgrade: AbilityUpgrade):
     else:
         current_upgrades[ability_upgrade.id]["quantity"] += 1
 
+    if ability_upgrade.max_quantity > 0:
+        var current_quantity = current_upgrades[ability_upgrade.id]["quantity"]
+
+        if current_quantity == ability_upgrade.max_quantity:
+            upgrade_pool = upgrade_pool.filter(func (upgrade: AbilityUpgrade):
+                return upgrade.id != ability_upgrade.id
+            )
+
     GameEvents.emit_ability_upgrade_added(ability_upgrade, current_upgrades)
 
 
